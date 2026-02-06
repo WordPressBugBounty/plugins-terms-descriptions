@@ -1,4 +1,5 @@
 <?php
+
 class SCO_TD_Options {
 	private $options = array();
 	private static $instance = null;
@@ -43,6 +44,6 @@ class SCO_TD_Options {
 		if ( !isset( $this->options[ $name ] ) ) {
 			return false;
 		}
-		return $this->options[ $name ];
+		return wp_kses_post($this->options[ $name ]);
 	}
 }
